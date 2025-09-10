@@ -26,7 +26,9 @@ app.use('/api/', limiter);
 app.use(cors({
   origin: [
     'http://localhost:3000',
-    'http://localhost:3001'
+    'http://localhost:3001',
+    'https://techboost.vn',
+    'https://www.techboost.vn'
   ],
   credentials: true,
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
