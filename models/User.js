@@ -35,9 +35,20 @@ const UserSchema = new mongoose.Schema({
     type: mongoose.Schema.Types.ObjectId,
     ref: 'Course'
   }],
-  joinedAt: {
-    type: Date,
-    default: Date.now
+  grade: {
+    type: Number,
+    required: [true, 'Please select your grade'],
+    min: 1,
+    max: 99
+  },
+  gradeUpdatedAt: {
+    type: Date
+  },
+  phone: {
+    type: String,
+    required: [true, 'Please add a phone number'],
+    trim: true,
+    match: [/^[0-9]{10,11}$/, 'Please add a valid phone number']
   }
 }, {
   timestamps: true
